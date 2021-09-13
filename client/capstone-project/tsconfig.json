@@ -19,11 +19,12 @@
       "dom"
     ],
     "paths": {
-      "primeng/*": ["node_modules/primeng-lts/*"]
+      "primeng/*": ["node_modules/primeng/*"]
     }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true
+    "strictInjectionParameters": true,
+    "enableIvy": false
   }
 }

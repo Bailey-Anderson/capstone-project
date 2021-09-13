@@ -1,7 +1,7 @@
 [
   {
     "GroupId": 1,
-    "GroupName": "110",
+    "GroupName": "HIST-110",
     "OrganizationName": "HIST",
     "SponsorName": "AMERICAN HISTORY 1900-1950",
     "SponsorPhone": "Mr. Tom Forrester",
@@ -30,7 +30,7 @@
   },
   {
     "GroupId": 2,
-    "GroupName": "233",
+    "GroupName": "HIST-233",
     "OrganizationName": "HIST",
     "SponsorName": "EUROPEAN HISTORY 1880-1960",
     "SponsorPhone": "Dr. Marissa Stewart",
@@ -53,7 +53,7 @@
   },
   {
     "GroupId": 3,
-    "GroupName": "101",
+    "GroupName": "MATH-101",
     "OrganizationName": "MATH",
     "SponsorName": "ELEMENTARY STATISTICS",
     "SponsorPhone": "Dr. Tim Flood",
@@ -82,7 +82,7 @@
   },
   {
     "GroupId": 4,
-    "GroupName": "311",
+    "GroupName": "MATH-311",
     "OrganizationName": "MATH",
     "SponsorName": "TRIGONOMETRY II",
     "SponsorPhone": "Dr. Vanessa Coolridge",
@@ -111,7 +111,7 @@
   },
   {
     "GroupId": 10,
-    "GroupName": "104",
+    "GroupName": "SCI-104",
     "OrganizationName": "SCI",
     "SponsorName": "PHYSICAL SCIENCE",
     "SponsorPhone": "Dr. Fang Lin",
@@ -140,7 +140,7 @@
   },
   {
     "GroupId": 11,
-    "GroupName": "350",
+    "GroupName": "SCI-350",
     "OrganizationName": "SCI",
     "SponsorName": "PHYSICS",
     "SponsorPhone": "Dr. Woodrow Wilson",
@@ -157,7 +157,7 @@
   },
   {
     "GroupId": 12,
-    "GroupName": "107",
+    "GroupName": "MUSIC-107",
     "OrganizationName": "MUSIC",
     "SponsorName": "MUSIC APPRECIATION",
     "SponsorPhone": "Mrs. Abigail Fern",
@@ -167,7 +167,7 @@
   },
   {
     "GroupId": 13,
-    "GroupName": "101",
+    "GroupName": "ENG-101",
     "OrganizationName": "ENG",
     "SponsorName": "ENGLISH COMPOSITION",
     "SponsorPhone": "Mr. Winston Churchill",
@@ -184,7 +184,7 @@
   },
   {
     "GroupId": 14,
-    "GroupName": "202",
+    "GroupName": "ENG-202",
     "OrganizationName": "ENG",
     "SponsorName": "POETRY ANALYSIS",
     "SponsorPhone": "Mrs. Cindy Carter",
@@ -194,7 +194,7 @@
   },
   {
     "GroupId": 15,
-    "GroupName": "118",
+    "GroupName": "ART-118",
     "OrganizationName": "ART",
     "SponsorName": "POTTERY",
     "SponsorPhone": "Ms. Winona Ryder",
