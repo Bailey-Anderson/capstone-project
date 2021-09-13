@@ -1,0 +1,41 @@
+:host::ng-deep .ui-table {
+    padding: 10px 0px 10px 10px;
+    width: 99%;
+    font-family: 'Hind', 'Taviraj', sans-serif;
+}
+
+:host::ng-deep .ui-table .ui-table-caption {
+    background-color: #1B264F;
+    color: #ffffff;
+    line-height: 30px;
+    font-size: x-large;
+}
+
+:host::ng-deep .ui-table .ui-table-thead > tr > th {
+    background-color: #BFD1E5;
+}
+
+:host::ng-deep .ui-table .ui-table-tbody > tr > td {
+    font-weight: 300;
+}
+
+:host::ng-deep .ui-table .ui-table-tbody > tr.ui-state-highlight {
+    background-color: #274690;
+}
+
+:host::ng-deep .ui-table .ui-table-tbody > tr:nth-child(even).ui-state-highlight {
+    background-color: #274690;
+}
+
+:host::ng-deep .ui-paginator .ui-paginator-pages .ui-paginator-page.ui-state-active {
+    background-color: #274690;
+}
+
+:host::ng-deep .ui-button {
+    background-color: #1A936F;
+    border: 1px solid #1A936F;
+    font-size: 16px;
+    font-weight: 500;
+    width: 15%;
+    height: 40px;
+}

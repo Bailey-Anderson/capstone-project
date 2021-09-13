@@ -1,1 +1,80 @@
-<p>course-list works!</p>
+
+<p-table [columns]="cols" [value]="group" selectionMode="single" [(selection)]="selectedGroup" (onRowSelect)="onRowSelect($event, group)" [paginator]="true" [rows]="15">
+    <ng-template pTemplate="caption">
+        Course List
+    </ng-template>
+    <ng-template pTemplate="header" let-columns>
+        <tr [pSortableColumn]="columns">
+            <th>Course Code</th>
+            <th>Course Name</th>
+            <th>Instructor Name</th>
+            <th>Meeting Time</th>
+            <th>Total Seats</th>  
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-group>
+        <tr [pSelectableRow]="rowData">
+            <td>{{group.GroupName}}</td>
+            <td>{{group.SponsorName}}</td>
+            <td>{{group.SponsorPhone}}</td> 
+            <td>{{group.SponsorEmail}}</td>
+            <td>{{group.MaxGroupSize}}</td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="summary" let-rowData>
+        <div style="text-align:right">
+            <button pButton type="button" icon="pi pi-plus" iconPos="left" label="Create Course" (click)="showDialogToAdd()"></button>
+        </div>
+    </ng-template>    
+</p-table>
+
+<p-dialog header="Course Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true"  [style]="{width: '300px'}">
+    <div class="ui-g ui-fluid" *ngIf="group">
+        <div class="ui-g-12">
+            <div class="ui-g-4">
+                <label for="code">Course Code</label>
+            </div>
+            <div class="ui-g-8">
+                <input pInputText id="code" [(ngModel)]="group.groupName" />
+            </div>
+        </div>
+        <div class="ui-g-12">
+            <div class="ui-g-4">
+                <label for="couName">Course Name</label>
+            </div>
+            <div class="ui-g-8">
+                <input pInputText id="couName" [(ngModel)]="group.sponsorName" />
+            </div>
+        </div>
+        <div class="ui-g-12">
+            <div class="ui-g-4">
+                <label for="insName">Instructor Name</label>
+            </div>
+            <div class="ui-g-8">
+                <input pInputText id="insName" [(ngModel)]="group.sponsorPhone" />
+            </div>
+        </div>
+        <div class="ui-g-12">
+            <div class="ui-g-4">
+                <label for="time">Meeting Time</label>
+            </div>
+            <div class="ui-g-8">
+                <input pInputText id="time" [(ngModel)]="group.sponsorEmail" />
+            </div>
+        </div>
+        <div class="ui-g-12">
+            <div class="ui-g-4">
+                <label for="seats">Total Seats</label>
+            </div>
+            <div class="ui-g-8">
+                <input pInputText id="seats" [(ngModel)]="group.maxGroupSize" />
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="ui-dialog-buttonpane ui-helper-clearfix">
+            <button type="button" pButton icon="fa fa-close" (click)="cancel()" label="Cancel"></button>
+            <button type="button" pButton icon="fa fa-check" (click)="save()" label="Save"></button>
+        </div>
+    </footer>
+</p-dialog>

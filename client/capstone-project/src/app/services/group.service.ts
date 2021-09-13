@@ -6,11 +6,12 @@ import { Group } from '../models/group';
 @Injectable({
   providedIn: 'root'
 })
+
 export class GroupService {
 
   errorMessage: string;
 
-  groupUrl = 'http://127.0.0.1:8082/api/groups'
+  private groupUrl: string = 'http://localhost:8082/api/groups'
 
   jsonContentTypeHeaders = {
     headers: new HttpHeaders().set('Content-Type', 'application/json')
@@ -20,6 +21,7 @@ export class GroupService {
 
   getGroups(): Observable<Group> {
     const results: Observable<Group> = this.http.get<Group>(this.groupUrl);
+    console.log(`getGroups() returned ${results}`);
     return results;
   }
 
