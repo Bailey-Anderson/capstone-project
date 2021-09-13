@@ -9,6 +9,7 @@ export class Group {
     members: {
         memberId: number,
         memberEmail: string,
+        memberName: string,
         memberPhone: string
     }
 

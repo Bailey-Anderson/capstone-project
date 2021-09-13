@@ -11,8 +11,8 @@ import { GroupService } from 'src/app/services/group.service';
 
 export class CourseListComponent implements OnInit {
 
-  displayDialog: boolean;
-  newGroup: boolean;
+  displayDialog: boolean = false;
+  newGroup: boolean = false;
   selectedGroup: Group;
   groups: Group[];
   cols: any[];
@@ -27,22 +27,40 @@ export class CourseListComponent implements OnInit {
     this.groupService.getGroups().subscribe(groups => this.group = groups);
   }
 
-  showDialogToAdd() {
+  showDialog(): void {
     this.newGroup = true;
-    this.group = null;
     this.displayDialog = true;
   }
 
-  save() {
-    let groups = [...this.groups];
-    if (this.newGroup) {
-      groups.push(this.group);
+  // save() {
+  //   let groups = [...this.groups];
+  //   if (this.newGroup) {
+  //     groups.push(this.group);
+  //   } else {
+  //     groups[this.groups.indexOf(this.selectedGroup)] = this.group;
+  //   }
+
+  //   this.groups = groups;
+  //   this.group = null;
+  //   this.displayDialog = false;
+  // }
+
+  addGroup(group: Group): void {
+    this.groupService.addGroup(group).subscribe(group => {
+      this.group = group;
+      this.groupService.getGroups();
+    },
+    (error) => alert("Sorry, unable to add course."));
+  }
+
+  save(group): void {
+    console.log(group.groupId);
+    if (group.groupId === null || group.groupId < 1) {
+      this.addGroup(group);
     } else {
-      groups[this.groups.indexOf(this.selectedGroup)] = this.group;
+      alert("Sorry, unable to add course");
     }
 
-    this.groups = groups;
-    this.group = null;
     this.displayDialog = false;
   }
 
@@ -53,7 +71,7 @@ export class CourseListComponent implements OnInit {
     this.displayDialog = false;
   }
 
-  onRowSelect(event, group) {
+  onRowSelect() {
     this.newGroup = false;
     this.router.navigate(['details']);
   }

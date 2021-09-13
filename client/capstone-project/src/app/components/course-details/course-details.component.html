@@ -1,1 +1,188 @@
-<p>course-details works!</p>
+<p-header>
+  <h1>${{ group.sponsorName }}</h1>
+</p-header>
+<div class="p-grid">
+  <div class="p-col p-col-align-stretch">
+    <p-card>
+      <p-header>
+        <h1>Course Details</h1>
+        <button pButton type="button">
+        <i
+          class="pi pi-pencil"
+          style="font-size: 1.5rem"
+          (click)="showCourseEditDialog()"
+        ></i>
+        </button>
+      </p-header>
+      Body Content
+      <p-footer> Footer content here </p-footer>
+    </p-card>
+  </div>
+  <div class="p-col">
+    <p-card>
+      <p-header>
+        <h1>Students Enrolled</h1>
+        <button pButton type="button">
+        <i
+          class="pi pi-user-plus"
+          style="font-size: 1.5rem"
+          (click)="showStudentDialog()"
+        ></i>
+        </button>
+      </p-header>
+      <p-table [value]="group">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Student Name</th>
+            <th>Student Email</th>
+            <th>Student Phone</th>
+            <th>Remove</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-group>
+          <tr>
+            <td>{{ group.members.memberName }}</td>
+            <td>{{ group.member.memberEmail }}</td>
+            <td>{{ group.member.memberPhone }}</td>
+            <td>
+            <button pButton type="button">
+              <i class="pi pi-minus-circle" style="font-size: 1.5rem"></i>
+            </button>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+      <p-footer> Footer content here </p-footer>
+    </p-card>
+  </div>
+</div>
+
+<!-- <div id="dialogBoxes">
+<p-dialog
+  header="Add Student"
+  [(visible)]="displayStudentDialog"
+  [responsive]="true"
+  showEffect="fade"
+  [modal]="true"
+  [style]="{ width: '380px' }"
+>
+  <div class="ui-g ui-fluid" *ngIf="group">
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        <label for="group.members.memberName">Student Name</label>
+      </div>
+      <div class="ui-g-8">
+        <input
+          pInputText
+          id="group.members.memberName"
+          [(ngModel)]="group.members.memberName"
+        />
+      </div>
+    </div>
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        <label for="group.members.memberEmail">Student Email</label>
+      </div>
+      <div class="ui-g-8">
+        <input
+          pInputText
+          id="group.members.memberEmail"
+          [(ngModel)]="group.members.memberEmail"
+        />
+      </div>
+    </div>
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        <label for="group.members.memberPhone">Student Phone</label>
+      </div>
+      <div class="ui-g-8">
+        <input
+          pInputText
+          id="group.members.memberPhone"
+          [(ngModel)]="group.members.memberPhone"
+        />
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="ui-dialog-buttonpane ui-helper-clearfix">
+      <button type="button" pButton (click)="cancel()" label="Cancel"></button>
+      <button type="button" pButton (click)="add()" label="Add"></button>
+    </div>
+  </footer>
+</p-dialog>
+
+<p-dialog
+  header="Edit Course Details"
+  [(visible)]="displayEditCourseDialog"
+  [responsive]="true"
+  showEffect="fade"
+  [modal]="true"
+  [style]="{ width: '380px' }"
+>
+  <div class="ui-g ui-fluid" *ngIf="group">
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        <label for="group.GroupName">Course Code</label>
+      </div>
+      <div class="ui-g-8">
+        <input pInputText id="Group.groupName" [(ngModel)]="group.groupName" />
+      </div>
+    </div>
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        <label for="group.SponsorName">Course Name</label>
+      </div>
+      <div class="ui-g-8">
+        <input
+          pInputText
+          id="group.SponsorName"
+          [(ngModel)]="group.sponsorName"
+        />
+      </div>
+    </div>
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        <label for="group.SponsorPhone">Instructor Name</label>
+      </div>
+      <div class="ui-g-8">
+        <input
+          pInputText
+          id="group.SponsorPhone"
+          [(ngModel)]="group.sponsorPhone"
+        />
+      </div>
+    </div>
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        <label for="group.SponsorEmail">Meeting Time</label>
+      </div>
+      <div class="ui-g-8">
+        <input
+          pInputText
+          id="group.SponsorEmail"
+          [(ngModel)]="group.sponsorEmail"
+        />
+      </div>
+    </div>
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        <label for="group.MaxGroupSize">Total Seats</label>
+      </div>
+      <div class="ui-g-8">
+        <input
+          pInputText
+          id="group.MaxGroupSize"
+          [(ngModel)]="group.maxGroupSize"
+        />
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="ui-dialog-buttonpane ui-helper-clearfix">
+      <button type="button" pButton (click)="cancel()" label="Cancel"></button>
+      <button type="button" pButton (click)="save(group)" label="Save"></button>
+    </div>
+  </footer>
+</p-dialog>
+</div> -->

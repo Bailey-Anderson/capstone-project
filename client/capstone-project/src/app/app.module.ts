@@ -10,8 +10,9 @@ import { DialogModule } from 'primeng/dialog';
 import { SharedModule } from 'primeng/api';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { ButtonModule } from 'primeng';
+import { ButtonModule, CardModule } from 'primeng';
 import { CourseDetailsComponent } from './components/course-details/course-details.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,9 @@ import { CourseDetailsComponent } from './components/course-details/course-detai
     SharedModule,
     FormsModule,
     HttpClientModule,
-    ButtonModule
+    ButtonModule,
+    CardModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

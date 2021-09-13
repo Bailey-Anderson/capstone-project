@@ -39,3 +39,8 @@
     width: 15%;
     height: 40px;
 }
+
+footer .ui-button{
+    width: 25%;
+    margin: 10px 0px 10px 50px;
+}

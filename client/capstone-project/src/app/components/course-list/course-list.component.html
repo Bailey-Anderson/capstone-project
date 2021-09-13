@@ -1,5 +1,12 @@
-
-<p-table [columns]="cols" [value]="group" selectionMode="single" [(selection)]="selectedGroup" (onRowSelect)="onRowSelect($event, group)" [paginator]="true" [rows]="15">
+<div class="ui-g ui-fluid">
+    <div class="ui-g-12 ui-md-4">
+        <div class="ui-inputgroup">
+            <button pButton type="button" label="Search"></button>
+            <input type="text" pInputText placeholder="Course">         
+        </div>
+    </div>
+</div>
+<p-table [columns]="cols" [value]="group" selectionMode="single" [(selection)]="selectedGroup" (onRowSelect)="onRowSelect()" [paginator]="true" [rows]="15">
     <ng-template pTemplate="caption">
         Course List
     </ng-template>
@@ -23,58 +30,58 @@
     </ng-template>
     <ng-template pTemplate="summary" let-rowData>
         <div style="text-align:right">
-            <button pButton type="button" icon="pi pi-plus" iconPos="left" label="Create Course" (click)="showDialogToAdd()"></button>
+            <button pButton type="button" icon="pi pi-plus" iconPos="left" label="Create Course" (click)="showDialog()"></button>
         </div>
     </ng-template>    
 </p-table>
 
-<p-dialog header="Course Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true"  [style]="{width: '300px'}">
+<p-dialog header="Course Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true"  [style]="{width: '380px'}">
     <div class="ui-g ui-fluid" *ngIf="group">
         <div class="ui-g-12">
             <div class="ui-g-4">
-                <label for="code">Course Code</label>
+                <label for="group.GroupName">Course Code</label>
             </div>
             <div class="ui-g-8">
-                <input pInputText id="code" [(ngModel)]="group.groupName" />
+                <input pInputText id="Group.groupName" [(ngModel)]="group.groupName" />
             </div>
         </div>
         <div class="ui-g-12">
             <div class="ui-g-4">
-                <label for="couName">Course Name</label>
+                <label for="group.SponsorName">Course Name</label>
             </div>
             <div class="ui-g-8">
-                <input pInputText id="couName" [(ngModel)]="group.sponsorName" />
+                <input pInputText id="group.SponsorName" [(ngModel)]="group.sponsorName" />
             </div>
         </div>
         <div class="ui-g-12">
             <div class="ui-g-4">
-                <label for="insName">Instructor Name</label>
+                <label for="group.SponsorPhone">Instructor Name</label>
             </div>
             <div class="ui-g-8">
-                <input pInputText id="insName" [(ngModel)]="group.sponsorPhone" />
+                <input pInputText id="group.SponsorPhone" [(ngModel)]="group.sponsorPhone" />
             </div>
         </div>
         <div class="ui-g-12">
             <div class="ui-g-4">
-                <label for="time">Meeting Time</label>
+                <label for="group.SponsorEmail">Meeting Time</label>
             </div>
             <div class="ui-g-8">
-                <input pInputText id="time" [(ngModel)]="group.sponsorEmail" />
+                <input pInputText id="group.SponsorEmail" [(ngModel)]="group.sponsorEmail" />
             </div>
         </div>
         <div class="ui-g-12">
             <div class="ui-g-4">
-                <label for="seats">Total Seats</label>
+                <label for="group.MaxGroupSize">Total Seats</label>
             </div>
             <div class="ui-g-8">
-                <input pInputText id="seats" [(ngModel)]="group.maxGroupSize" />
+                <input pInputText id="group.MaxGroupSize" [(ngModel)]="group.maxGroupSize" />
             </div>
         </div>
     </div>
     <footer>
         <div class="ui-dialog-buttonpane ui-helper-clearfix">
-            <button type="button" pButton icon="fa fa-close" (click)="cancel()" label="Cancel"></button>
-            <button type="button" pButton icon="fa fa-check" (click)="save()" label="Save"></button>
+            <button type="button" pButton (click)="cancel()" label="Cancel"></button>
+            <button type="button" pButton (click)="save(group)" label="Save"></button>
         </div>
     </footer>
 </p-dialog>

@@ -1,0 +1,30 @@
+div {
+    display: flex;
+    flex-direction: row;
+}
+
+.p-col {
+    width: 50%;
+}
+
+p-card {
+    width: 100%;
+    margin: 10px;
+}
+
+h1 {
+    width: 92%;
+    padding-left: 10px;
+}
+
+p-header {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 2px solid #1B264F;
+    color:#1B264F;
+}
+
+i {
+    margin-top: 25px;
+    cursor: pointer;
+}
