@@ -1,15 +1,12 @@
-div {
+body {
     display: flex;
     flex-direction: row;
-}
-
-.p-col {
-    width: 50%;
 }
 
 p-card {
     width: 100%;
     margin: 10px;
+    font-family: 'Hind', 'Taviraj', sans-serif;
 }
 
 h1 {
@@ -25,6 +22,59 @@ p-header {
 }
 
 i {
-    margin-top: 25px;
     cursor: pointer;
+}
+
+h2 {
+    color: #274690;
+}
+
+button {
+    margin-top: 25px;
+    height: 40px;
+    width: 40px;
+    background-color: #1A936F;
+    color: white;
+    border: 1px solid #1A936F;
+    border-radius: 3px;
+}
+
+.remove-button {
+    background-color: white;
+    border: 0px;
+    margin: 0;
+}
+
+.remove-icon {
+    background-color: red;
+    color: white;
+    border-radius: 100%;
+}
+
+.width12 {
+    width: 12%;
+    text-align: center;
+}
+
+.pad-left8 {
+    padding-left: 8px !important;
+}
+
+div > button {
+    height: 40px;
+    width: 90%;
+    background-color: #1A936F;
+    color: white;
+    border: 1px solid #1A936F;
+    border-radius: 3px;
+    margin: 10px;
+    font-family: 'Hind', 'Taviraj', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+p-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
 }

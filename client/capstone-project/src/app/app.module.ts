@@ -12,13 +12,15 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ButtonModule, CardModule } from 'primeng';
 import { CourseDetailsComponent } from './components/course-details/course-details.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FooterComponent } from './components/footer/footer.component'; 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     CourseListComponent,
-    CourseDetailsComponent
+    CourseDetailsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

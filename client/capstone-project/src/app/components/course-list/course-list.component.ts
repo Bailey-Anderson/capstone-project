@@ -47,10 +47,10 @@ export class CourseListComponent implements OnInit {
 
   addGroup(group: Group): void {
     this.groupService.addGroup(group).subscribe(group => {
-      this.group = group;
       this.groupService.getGroups();
     },
     (error) => alert("Sorry, unable to add course."));
+    
   }
 
   save(group): void {
@@ -65,10 +65,11 @@ export class CourseListComponent implements OnInit {
   }
 
   cancel() {
-    let index = this.groups.indexOf(this.selectedGroup);
-    this.groups = this.groups.filter((val, i) => i != index);
+    // let index = this.groups.indexOf(this.selectedGroup);
+    // this.groups = this.groups.filter((val, i) => i != index);
     this.group = null;
     this.displayDialog = false;
+    this.ngOnInit();
   }
 
   onRowSelect() {

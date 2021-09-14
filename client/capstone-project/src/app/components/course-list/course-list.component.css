@@ -34,6 +34,7 @@
 :host::ng-deep .ui-button {
     background-color: #1A936F;
     border: 1px solid #1A936F;
+    font-family: 'Hind', 'Taviraj', sans-serif;
     font-size: 16px;
     font-weight: 500;
     width: 15%;

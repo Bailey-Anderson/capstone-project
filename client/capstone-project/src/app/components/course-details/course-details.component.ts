@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import { Group } from 'src/app/models/group';
 import { GroupService } from 'src/app/services/group.service';
 
@@ -7,7 +7,7 @@ import { GroupService } from 'src/app/services/group.service';
   templateUrl: './course-details.component.html',
   styleUrls: ['./course-details.component.css']
 })
-export class CourseDetailsComponent implements OnInit {
+export class CourseDetailsComponent implements OnInit, OnChanges {
 
   group: Group;
   groups: Group[];
@@ -22,6 +22,10 @@ export class CourseDetailsComponent implements OnInit {
     this.groupService.getGroups().subscribe(groups => this.group = groups);
     // this.groupId = this.group.groupId;
     // this.groupService.getGroupById(this.groupId).subscribe(group => this.group = group);
+  }
+
+  ngOnChanges(): void {
+
   }
 
   getGroup(id: number): void {
@@ -54,5 +58,13 @@ export class CourseDetailsComponent implements OnInit {
 
   save(group: Group) {
 
+  }
+
+  deleteCourse() {
+
+  }
+
+  returnToCourses() {
+    
   }
 }
