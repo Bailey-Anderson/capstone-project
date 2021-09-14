@@ -1,24 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Group } from 'src/app/models/group';
 import { GroupService } from 'src/app/services/group.service';
 
 @Component({
-  selector: 'app-create-course',
-  templateUrl: './create-course.component.html',
-  styleUrls: ['./create-course.component.css']
+  selector: 'app-edit-course',
+  templateUrl: './edit-course.component.html',
+  styleUrls: ['./edit-course.component.css']
 })
-export class CreateCourseComponent implements OnInit {
-
+export class EditCourseComponent implements OnInit {
   group: Group;
-  createCourseForm: FormGroup;
+  editCourseForm: FormGroup;
 
   constructor(private groupService: GroupService,
     private router: Router,
     private formBuilder: FormBuilder) { 
       this.router = router;
-      this.createCourseForm = formBuilder.group({
+      this.editCourseForm = formBuilder.group({
         groupName: [null, Validators.required],
         organizationName: [null, Validators.required],
         sponsorName: [null, Validators.required],
@@ -32,7 +31,7 @@ export class CreateCourseComponent implements OnInit {
     this.groupService.getGroups().subscribe(groups => this.group = groups);
   }
 
-  addGroup(formValues): void {
+  editGroup(formValues): void {
     this.group.GroupId = 0;
     this.group.GroupName = formValues.GroupName;
     this.group.OrganizationName = formValues.OrganizationName;
@@ -40,17 +39,16 @@ export class CreateCourseComponent implements OnInit {
     this.group.SponsorPhone = formValues.SponsorPhone;
     this.group.SponsorEmail = formValues.SponsorEmail;
     this.group.MaxGroupSize = formValues.MaxGroupSize;
-    this.groupService.addGroup(this.group).subscribe();
-    this.router.navigate(['courseList'])
+    this.groupService.editGroup(this.group).subscribe();
+    this.router.navigate(['courseDetails'])
   }
 
   onSubmit(formValues): void {
-    this.addGroup(formValues);
+    this.editGroup(formValues);
   }
 
   cancel() {
-    this.router.navigate(['courseList']);
+    this.router.navigate(['courseDetails']);
   }
-
 
 }

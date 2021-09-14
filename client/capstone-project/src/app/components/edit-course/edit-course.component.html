@@ -1,0 +1,96 @@
+<form
+  [formGroup]="editCourseForm"
+  (ngSubmit)="onSubmit(editCourseForm.value)"
+>
+  <div class="ui-g ui-fluid" *ngIf="group">
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        <label for="groupName">Course Code</label>
+      </div>
+      <div class="ui-g-8">
+        <input
+          pInputText
+          id="groupName"
+          [(ngModel)]="group.GroupName"
+          formControlName="groupName"
+        />
+      </div>
+    </div>
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        <label for="organizationName">Department Name</label>
+      </div>
+      <div class="ui-g-8">
+        <input
+          pInputText
+          id="organizationName"
+          [(ngModel)]="group.OrganizationName"
+          formControlName="organizationName"
+        />
+      </div>
+    </div>
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        <label for="group.SponsorName">Course Name</label>
+      </div>
+      <div class="ui-g-8">
+        <input
+          pInputText
+          id="group.SponsorName"
+          [(ngModel)]="group.SponsorName"
+          formControlName="sponsorName"
+        />
+      </div>
+    </div>
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        <label for="group.SponsorPhone">Instructor Name</label>
+      </div>
+      <div class="ui-g-8">
+        <input
+          pInputText
+          id="group.SponsorPhone"
+          [(ngModel)]="group.SponsorPhone"
+          formControlName="sponsorPhone"
+        />
+      </div>
+    </div>
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        <label for="group.SponsorEmail">Meeting Time</label>
+      </div>
+      <div class="ui-g-8">
+        <input
+          pInputText
+          id="group.SponsorEmail"
+          [(ngModel)]="group.SponsorEmail"
+          formControlName="sponsorEmail"
+        />
+      </div>
+    </div>
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        <label for="group.MaxGroupSize">Total Seats</label>
+      </div>
+      <div class="ui-g-8">
+        <input
+          pInputText
+          id="group.MaxGroupSize"
+          [(ngModel)]="group.MaxGroupSize"
+          formControlName="maxGroupSize"
+        />
+      </div>
+    </div>
+  </div>
+</form>
+<footer>
+  <div class="ui-dialog-buttonpane ui-helper-clearfix">
+    <button type="button" pButton (click)="cancel()" label="Cancel"></button>
+    <button
+      type="button"
+      pButton
+      (click)="onSubmit(editCourseForm.value)"
+      label="Save"
+    ></button>
+  </div>
+</footer>

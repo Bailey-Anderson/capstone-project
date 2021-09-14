@@ -16,6 +16,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './components/footer/footer.component'; 
 import { GroupService } from './services/group.service';
 import { CreateCourseComponent } from './components/create-course/create-course.component';
+import { EditCourseComponent } from './components/edit-course/edit-course.component';
+import { AddStudentComponent } from './components/add-student/add-student.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +25,9 @@ import { CreateCourseComponent } from './components/create-course/create-course.
     CourseListComponent,
     CourseDetailsComponent,
     FooterComponent,
-    CreateCourseComponent
+    CreateCourseComponent,
+    EditCourseComponent,
+    AddStudentComponent
   ],
   imports: [
     BrowserModule,

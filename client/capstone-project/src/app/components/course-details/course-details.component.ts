@@ -16,8 +16,6 @@ export class CourseDetailsComponent implements OnInit, OnChanges {
   member: Member;
   members: Member[];
   groupId: number;
-  displayEditCourseDialog: boolean = false;
-  displayStudentDialog: boolean = false;
   selectedGroup: Group;
 
   constructor(private groupService: GroupService,
@@ -27,35 +25,11 @@ export class CourseDetailsComponent implements OnInit, OnChanges {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((group) => this.groupId = group.id);
     console.log(this.groupId);
-    this.groupService.getGroupById(this.groupId).subscribe((group) => this.selectedGroup = group);
-    console.log(this.selectedGroup);
+    // this.groupService.getGroupById(this.GroupId).subscribe((group) => this.selectedGroup = group);
+    // console.log(this.selectedGroup);
   }
 
   ngOnChanges(): void {
-
-  }
-
-
-  showCourseEditDialog():void {
-    this.displayEditCourseDialog = true;
-  }
-
-  showStudentDialog(): void {
-    this.displayStudentDialog = true;
-  }
-
-  cancel() {
-    let index = this.groups.indexOf(this.selectedGroup);
-    this.groups = this.groups.filter((val, i) => i != index);
-    this.group = null;
-    this.displayEditCourseDialog = false;
-  }
-
-  add() {
-
-  }
-
-  save(group: Group) {
 
   }
 
@@ -69,5 +43,13 @@ export class CourseDetailsComponent implements OnInit, OnChanges {
 
   removeStudent(member: Member) {
 
+  }
+
+  editCourseDetails(): void {
+    this.router.navigate(['editCourse']);
+  }
+
+  addStudent(): void {
+    this.router.navigate(['addStudent']);
   }
 }
