@@ -1,5 +1,7 @@
 import { Component, OnChanges, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Group } from 'src/app/models/group';
+import { Member } from 'src/app/models/member';
 import { GroupService } from 'src/app/services/group.service';
 
 @Component({
@@ -11,31 +13,28 @@ export class CourseDetailsComponent implements OnInit, OnChanges {
 
   group: Group;
   groups: Group[];
+  member: Member;
+  members: Member[];
   groupId: number;
   displayEditCourseDialog: boolean = false;
   displayStudentDialog: boolean = false;
   selectedGroup: Group;
 
-  constructor(private groupService: GroupService) { }
+  constructor(private groupService: GroupService,
+              private router: Router,
+              private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.groupService.getGroups().subscribe(groups => this.group = groups);
-    // this.groupId = this.group.groupId;
-    // this.groupService.getGroupById(this.groupId).subscribe(group => this.group = group);
+    this.activatedRoute.params.subscribe((group) => this.groupId = group.id);
+    console.log(this.groupId);
+    this.groupService.getGroupById(this.groupId).subscribe((group) => this.selectedGroup = group);
+    console.log(this.selectedGroup);
   }
 
   ngOnChanges(): void {
 
   }
 
-  getGroup(id: number): void {
-    this.groupService.getGroupById(id).subscribe(group => this.group = group,
-    error => console.log(error));
-  }
-
-  // groupRetrieved(group: Group): void {
-  //   this.group = group;
-  // }
 
   showCourseEditDialog():void {
     this.displayEditCourseDialog = true;
@@ -60,11 +59,15 @@ export class CourseDetailsComponent implements OnInit, OnChanges {
 
   }
 
-  deleteCourse() {
+  deleteCourse(group: Group) {
 
   }
 
   returnToCourses() {
-    
+    this.router.navigate(['courseList']);
+  }
+
+  removeStudent(member: Member) {
+
   }
 }

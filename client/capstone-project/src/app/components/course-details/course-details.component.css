@@ -23,6 +23,7 @@ p-header {
 
 i {
     cursor: pointer;
+    margin-top: 5px;
 }
 
 h2 {
@@ -30,7 +31,7 @@ h2 {
 }
 
 button {
-    margin-top: 25px;
+    margin-top: 20px;
     height: 40px;
     width: 40px;
     background-color: #1A936F;
@@ -61,8 +62,8 @@ button {
 }
 
 div > button {
-    height: 40px;
-    width: 90%;
+    height: 50px;
+    width: 190px;
     background-color: #1A936F;
     color: white;
     border: 1px solid #1A936F;
@@ -71,6 +72,7 @@ div > button {
     font-family: 'Hind', 'Taviraj', sans-serif;
     font-size: 16px;
     font-weight: 500;
+    cursor: pointer;
 }
 
 p-footer {

@@ -1,5 +1,8 @@
+import { _fixedSizeVirtualScrollStrategyFactory } from '@angular/cdk/scrolling';
 import { Component, Injectable, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { Group } from 'src/app/models/group';
 import { GroupService } from 'src/app/services/group.service';
 
@@ -11,69 +14,42 @@ import { GroupService } from 'src/app/services/group.service';
 
 export class CourseListComponent implements OnInit {
 
-  displayDialog: boolean = false;
-  newGroup: boolean = false;
   selectedGroup: Group;
-  groups: Group[];
   cols: any[];
   group: Group;
-  allGroups;
+  groupId: number;
+
+  createCourseForm: FormGroup;
 
   constructor(private groupService: GroupService,
               private router: Router,
-              private activatedRoute: ActivatedRoute) { }
+              private activatedRoute: ActivatedRoute,
+              private formBuilder: FormBuilder) { 
+                this.router = router;
+                this.createCourseForm = formBuilder.group({
+                  groupName: [null, Validators.required],
+                  organizationName: [null, Validators.required],
+                  sponsorName: [null, Validators.required],
+                  sponsorPhone: [null, Validators.required],
+                  sponsorEmail: [null, Validators.required],
+                  maxGroupSize: [null, Validators.required]
+                });
+              }
 
   ngOnInit(): void {
     this.groupService.getGroups().subscribe(groups => this.group = groups);
+
   }
 
-  showDialog(): void {
-    this.newGroup = true;
-    this.displayDialog = true;
-  }
-
-  // save() {
-  //   let groups = [...this.groups];
-  //   if (this.newGroup) {
-  //     groups.push(this.group);
-  //   } else {
-  //     groups[this.groups.indexOf(this.selectedGroup)] = this.group;
-  //   }
-
-  //   this.groups = groups;
-  //   this.group = null;
-  //   this.displayDialog = false;
-  // }
-
-  addGroup(group: Group): void {
-    this.groupService.addGroup(group).subscribe(group => {
-      this.groupService.getGroups();
-    },
-    (error) => alert("Sorry, unable to add course."));
-    
-  }
-
-  save(group): void {
-    console.log(group.groupId);
-    if (group.groupId === null || group.groupId < 1) {
-      this.addGroup(group);
-    } else {
-      alert("Sorry, unable to add course");
-    }
-
-    this.displayDialog = false;
-  }
-
-  cancel() {
-    // let index = this.groups.indexOf(this.selectedGroup);
-    // this.groups = this.groups.filter((val, i) => i != index);
-    this.group = null;
-    this.displayDialog = false;
-    this.ngOnInit();
+  createCourse() {
+    this.router.navigate(['createCourse']);
   }
 
   onRowSelect() {
-    this.newGroup = false;
-    this.router.navigate(['details']);
+    this.activatedRoute.params.subscribe((group) => this.groupId = group.id);
+    console.log(this.groupId);
+    this.groupService.getGroupById(this.groupId).subscribe((group) => this.selectedGroup = group);
+    console.log(this.selectedGroup);
+    this.router.navigateByUrl(`courseDetails/${this.groupId}`);
   }
 }

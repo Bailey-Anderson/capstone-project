@@ -30,7 +30,7 @@
         ></i>
       </button>
     </p-header>
-    <p-table [value]="group">
+    <p-table [value]="member">
       <ng-template pTemplate="header">
         <tr>
           <th>Student Name</th>
@@ -39,14 +39,14 @@
           <th class="width12 pad-left8">Remove</th>
         </tr>
       </ng-template>
-      <ng-template pTemplate="body" let-group>
+      <ng-template pTemplate="body" let-member>
         <tr>
-          <td>{{ group.members.memberName }}</td>
-          <td>{{ group.member.memberEmail }}</td>
-          <td>{{ group.member.memberPhone }}</td>
+          <td>{{ member.memberName }}</td>
+          <td>{{ member.memberEmail }}</td>
+          <td>{{ member.memberPhone }}</td>
           <td class="width12">
             <button pButton type="button" class="remove-button">
-              <i class="pi pi-minus-circle remove-icon" style="font-size: 2rem"></i>
+              <i class="pi pi-minus-circle remove-icon" (click)="removeStudent(member)" style="font-size: 2rem"></i>
             </button>
           </td>
         </tr>
@@ -56,14 +56,14 @@
 </body>
 <p-footer>
         <div style="text-align:right">
-            <button pButton type="button" label="Delete Course" (click)="deleteCourse()">Delete Course</button>
+            <button pButton type="button" label="Delete Course" (click)="deleteCourse(group)"></button>
         </div>
         <div style="text-align:right">
-            <button pButton type="button" label="Return to Course List" (click)="returnToCourses()">Return to Course List</button>
+            <button pButton type="button" label="Return to Course List" (click)="returnToCourses()"></button>
         </div>    
 </p-footer>
 
-<!-- <div id="dialogBoxes">
+<div id="dialogBoxes">
   <p-dialog
     header="Add Student"
     [(visible)]="displayStudentDialog"
@@ -72,7 +72,7 @@
     [modal]="true"
     [style]="{ width: '380px' }"
   >
-    <div class="ui-g ui-fluid" *ngIf="group">
+    <div class="ui-g ui-fluid" *ngIf="member">
       <div class="ui-g-12">
         <div class="ui-g-4">
           <label for="group.members.memberName">Student Name</label>
@@ -81,7 +81,7 @@
           <input
             pInputText
             id="group.members.memberName"
-            [(ngModel)]="group.members.memberName"
+            [(ngModel)]="member.memberName"
           />
         </div>
       </div>
@@ -93,7 +93,7 @@
           <input
             pInputText
             id="group.members.memberEmail"
-            [(ngModel)]="group.members.memberEmail"
+            [(ngModel)]="member.memberEmail"
           />
         </div>
       </div>
@@ -105,7 +105,7 @@
           <input
             pInputText
             id="group.members.memberPhone"
-            [(ngModel)]="group.members.memberPhone"
+            [(ngModel)]="member.memberPhone"
           />
         </div>
       </div>
@@ -210,4 +210,4 @@
       </div>
     </footer>
   </p-dialog>
-</div> -->
+</div>

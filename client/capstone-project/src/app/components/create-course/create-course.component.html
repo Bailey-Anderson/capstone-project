@@ -1,62 +1,4 @@
-<div class="ui-g ui-fluid">
-  <div class="ui-g-12 ui-md-4">
-    <div class="ui-inputgroup">
-      <button pButton type="button" label="Search"></button>
-      <input type="text" pInputText placeholder="Course" />
-    </div>
-  </div>
-</div>
-<p-table
-  [columns]="cols"
-  [value]="group"
-  selectionMode="single"
-  [(selection)]="selectedGroup"
-  (onRowSelect)="onRowSelect()"
-  [paginator]="true"
-  [rows]="15"
->
-  <ng-template pTemplate="caption"> Course List </ng-template>
-  <ng-template pTemplate="header" let-columns>
-    <tr>
-      <th>Course Code</th>
-      <th>Course Name</th>
-      <th>Instructor Name</th>
-      <th>Meeting Time</th>
-      <th>Total Seats</th>
-    </tr>
-  </ng-template>
-  <ng-template pTemplate="body" let-rowData let-group>
-    <tr [pSelectableRow]="rowData">
-      <td>{{ group.GroupName }}</td>
-      <td>{{ group.SponsorName }}</td>
-      <td>{{ group.SponsorPhone }}</td>
-      <td>{{ group.SponsorEmail }}</td>
-      <td>{{ group.MaxGroupSize }}</td>
-    </tr>
-  </ng-template>
-  <ng-template pTemplate="summary" let-rowData>
-    <div style="text-align: right">
-      <button
-        pButton
-        type="button"
-        icon="pi pi-plus"
-        iconPos="left"
-        label="Create Course"
-        (click)="createCourse()"
-      ></button>
-    </div>
-  </ng-template>
-</p-table>
-
-<!-- <p-dialog
-  header="Course Details"
-  [(visible)]="displayDialog"
-  [responsive]="true"
-  showEffect="fade"
-  [modal]="true"
-  [style]="{ width: '380px' }"
->
-  <form
+<form
     [formGroup]="createCourseForm"
     (ngSubmit)="onSubmit(createCourseForm.value)"
   >
@@ -147,4 +89,3 @@
       <button type="button" pButton (click)="onSubmit(createCourseForm.value)" label="Save"></button>
     </div>
   </footer>
-</p-dialog> -->
