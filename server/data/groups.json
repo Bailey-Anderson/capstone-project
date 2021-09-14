@@ -110,7 +110,7 @@
     ]
   },
   {
-    "GroupId": 10,
+    "GroupId": 5,
     "GroupName": "SCI-104",
     "OrganizationName": "SCI",
     "SponsorName": "PHYSICAL SCIENCE",
@@ -119,19 +119,19 @@
     "MaxGroupSize": 8,
     "Members": [
       {
-        "MemberId": 12,
+        "MemberId": 8,
         "MemberEmail": "bailey@jbhunt.com",
         "MemberName": "Bailey Anderson",
         "MemberPhone": "417-437-0000"
       },
       {
-        "MemberId": 13,
+        "MemberId": 9,
         "MemberEmail": "condog@hotmail.com",
         "MemberName": "Conner Hatfield",
         "MemberPhone": "793-403-0029"
       },
       {
-        "MemberId": 14,
+        "MemberId": 10,
         "MemberEmail": "darman@yahoo.com",
         "MemberName": "Darryl Johnson",
         "MemberPhone": "293-029-0293"
@@ -139,7 +139,7 @@
     ]
   },
   {
-    "GroupId": 11,
+    "GroupId": 6,
     "GroupName": "SCI-350",
     "OrganizationName": "SCI",
     "SponsorName": "PHYSICS",
@@ -148,7 +148,7 @@
     "MaxGroupSize": 5,
     "Members": [
       {
-        "MemberId": 15,
+        "MemberId": 11,
         "MemberEmail": "heythatsjess@gmail.com",
         "MemberName": "Jessica Thompson",
         "MemberPhone": "390-024-7584"
@@ -156,7 +156,7 @@
     ]
   },
   {
-    "GroupId": 12,
+    "GroupId": 7,
     "GroupName": "MUSIC-107",
     "OrganizationName": "MUSIC",
     "SponsorName": "MUSIC APPRECIATION",
@@ -166,7 +166,7 @@
     "Members": []
   },
   {
-    "GroupId": 13,
+    "GroupId": 8,
     "GroupName": "ENG-101",
     "OrganizationName": "ENG",
     "SponsorName": "ENGLISH COMPOSITION",
@@ -175,7 +175,7 @@
     "MaxGroupSize": 6,
     "Members": [
       {
-        "MemberId": 16,
+        "MemberId": 12,
         "MemberEmail": "itsjamalyall@aol.com",
         "MemberName": "Jamal Yall",
         "MemberPhone": "903-238-9432"
@@ -183,7 +183,7 @@
     ]
   },
   {
-    "GroupId": 14,
+    "GroupId": 9,
     "GroupName": "ENG-202",
     "OrganizationName": "ENG",
     "SponsorName": "POETRY ANALYSIS",
@@ -193,7 +193,7 @@
     "Members": []
   },
   {
-    "GroupId": 15,
+    "GroupId": 10,
     "GroupName": "ART-118",
     "OrganizationName": "ART",
     "SponsorName": "POTTERY",
