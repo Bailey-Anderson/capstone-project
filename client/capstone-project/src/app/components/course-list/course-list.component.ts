@@ -33,9 +33,11 @@ export class CourseListComponent implements OnInit {
 
   onRowSelect() {
     this.activatedRoute.params.subscribe((group) => this.groupId = group.id);
+
     this.groupService.getGroupById(this.groupId).subscribe((group) => this.selectedGroup = group);
     console.log(this.selectedGroup);
-    const routePath = `courseDetails/:${this.selectedGroup.GroupId}`;
+    
+    const routePath = `courseDetails/${this.selectedGroup.GroupId}`;
     console.log(routePath);
     this.router.navigateByUrl(`${routePath}`);
   }

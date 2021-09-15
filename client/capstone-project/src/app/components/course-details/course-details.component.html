@@ -1,5 +1,5 @@
 <header>
-  <h1>${{ group.SponsorName }}</h1>
+  <h1>{{ group?.SponsorName }}</h1>
 </header>
 <body>
   <div>
@@ -13,12 +13,12 @@
         ></i>
       </button>
     </header>
-    <h2>Department Name: ${{ group.OrganizationName }}</h2>
-    <h2>Course Code: ${{ group.GroupName }}</h2>
-    <h2>Course Name: ${{ group.SponsorName }}</h2>
-    <h2>Instructor Name: ${{ group.SponsorPhone }}</h2>
-    <h2>Meeting Time: ${{ group.SponsorEmail }}</h2>
-    <h2>Total Seats: ${{ group.MaxGroupSize }}</h2>
+    <h2>Department Name: {{ group?.OrganizationName }}</h2>
+    <h2>Course Code: {{ group?.GroupName }}</h2>
+    <h2>Course Name: {{ group?.SponsorName }}</h2>
+    <h2>Instructor Name: {{ group?.SponsorPhone }}</h2>
+    <h2>Meeting Time: {{ group?.SponsorEmail }}</h2>
+    <h2>Total Seats: {{ group?.MaxGroupSize }}</h2>
   </div>
   <div>
     <header>
@@ -31,29 +31,27 @@
         ></i>
       </button>
     </header>
-    <p-table [value]="group">
-      <ng-template pTemplate="header">
+    <p-table [value]="groups">
+      <ng-template pTemplate="header" let-columns>
         <tr>
           <th>Student Name</th>
           <th>Student Email</th>
           <th>Student Phone</th>
-          <th class="width12 pad-left8">Remove</th>
+          <th>Remove</th>
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-group>
         <tr>
-          <td>{{ group.Members.MemberName }}</td>
-          <td>{{ group.Members.MemberEmail }}</td>
-          <td>{{ group.Members.MemberPhone }}</td>
-          <td class="width12">
-            <button pButton type="button" class="remove-button">
-              <i
-                class="pi pi-minus-circle remove-icon"
-                (click)="removeStudent(member)"
-                style="font-size: 2rem"
-              ></i>
-            </button>
-          </td>
+          <td>{{ group?.Members.MemberName }}</td>
+          <td>{{ group?.Members.MemberEmail }}</td>
+          <td>{{ group?.Members.MemberPhone }}</td>
+          <td><button pButton type="button" class="remove-button">
+            <i
+              class="pi pi-minus-circle remove-icon"
+              (click)="removeStudent(group)"
+              style="font-size: 2rem"
+            ></i>
+          </button></td>
         </tr>
       </ng-template>
     </p-table>
@@ -66,7 +64,7 @@
       type="button"
       label="Delete Course"
       (click)="deleteCourse(group)"
-    >Delete Course</button>
+    ></button>
   </div>
   <div style="text-align: right">
     <button
@@ -74,6 +72,6 @@
       type="button"
       label="Return to Course List"
       (click)="returnToCourses()"
-    >Return to Course List</button>
+    ></button>
   </div>
 </p-footer>

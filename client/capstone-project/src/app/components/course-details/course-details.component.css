@@ -6,12 +6,13 @@ body {
 body > div {
     width: 100%;
     margin: 10px;
-    font-family: 'Hind', 'Taviraj', sans-serif;
+    font-family: 'Hind', sans-serif;
 }
 
 h1 {
     width: 92%;
     padding-left: 10px;
+    font-family: 'Hind', sans-serif;
 }
 
 header {
@@ -19,6 +20,7 @@ header {
     flex-direction: row;
     border-bottom: 2px solid #1B264F;
     color:#1B264F;
+    font-family: 'Hind', sans-serif;
 }
 
 i {
