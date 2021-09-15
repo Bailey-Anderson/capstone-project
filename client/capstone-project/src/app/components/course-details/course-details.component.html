@@ -1,9 +1,9 @@
-<p-header>
+<header>
   <h1>${{ group.SponsorName }}</h1>
-</p-header>
+</header>
 <body>
-  <p-card>
-    <p-header>
+  <div>
+    <header>
       <h1>Course Details</h1>
       <button pButton type="button" class="icon-buttons">
         <i
@@ -12,16 +12,16 @@
           (click)="editCourseDetails()"
         ></i>
       </button>
-    </p-header>
+    </header>
     <h2>Department Name: ${{ group.OrganizationName }}</h2>
     <h2>Course Code: ${{ group.GroupName }}</h2>
     <h2>Course Name: ${{ group.SponsorName }}</h2>
     <h2>Instructor Name: ${{ group.SponsorPhone }}</h2>
     <h2>Meeting Time: ${{ group.SponsorEmail }}</h2>
     <h2>Total Seats: ${{ group.MaxGroupSize }}</h2>
-  </p-card>
-  <p-card>
-    <p-header>
+  </div>
+  <div>
+    <header>
       <h1>Students Enrolled</h1>
       <button pButton type="button" class="icon-buttons">
         <i
@@ -30,7 +30,7 @@
           (click)="addStudent()"
         ></i>
       </button>
-    </p-header>
+    </header>
     <p-table [value]="group">
       <ng-template pTemplate="header">
         <tr>
@@ -42,9 +42,9 @@
       </ng-template>
       <ng-template pTemplate="body" let-group>
         <tr>
-          <td>{{ group.Members.memberName }}</td>
-          <td>{{ group.Members.memberEmail }}</td>
-          <td>{{ group.Members.memberPhone }}</td>
+          <td>{{ group.Members.MemberName }}</td>
+          <td>{{ group.Members.MemberEmail }}</td>
+          <td>{{ group.Members.MemberPhone }}</td>
           <td class="width12">
             <button pButton type="button" class="remove-button">
               <i
@@ -57,7 +57,7 @@
         </tr>
       </ng-template>
     </p-table>
-  </p-card>
+  </div>
 </body>
 <p-footer>
   <div style="text-align: right">
@@ -66,7 +66,7 @@
       type="button"
       label="Delete Course"
       (click)="deleteCourse(group)"
-    ></button>
+    >Delete Course</button>
   </div>
   <div style="text-align: right">
     <button
@@ -74,6 +74,6 @@
       type="button"
       label="Return to Course List"
       (click)="returnToCourses()"
-    ></button>
+    >Return to Course List</button>
   </div>
 </p-footer>

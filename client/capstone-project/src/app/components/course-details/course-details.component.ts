@@ -23,10 +23,13 @@ export class CourseDetailsComponent implements OnInit, OnChanges {
               private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe((group) => this.groupId = group.id);
-    console.log(this.groupId);
-    // this.groupService.getGroupById(this.GroupId).subscribe((group) => this.selectedGroup = group);
-    // console.log(this.selectedGroup);
+    // this.activatedRoute.queryParams.subscribe((groupId) => this.groupId = groupId)
+    // console.log(this.groupId);
+
+    this.group.GroupId = this.router.getCurrentNavigation().id.valueOf();
+    console.log(this.group.GroupId);
+    this.groupService.getGroupById(this.group.GroupId).subscribe((group) => this.group = group);
+    console.log(this.group);
   }
 
   ngOnChanges(): void {
