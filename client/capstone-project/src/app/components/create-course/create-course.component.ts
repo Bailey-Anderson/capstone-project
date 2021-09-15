@@ -35,7 +35,6 @@ export class CreateCourseComponent implements OnInit {
   onSubmit(formValues): void {
     this.groupService.addGroup(formValues).subscribe((group) => this.groupService.getGroups());
     console.log(formValues);
-    console.log('onSubmit called');
     this.router.navigate(['courseList']);
   }
 

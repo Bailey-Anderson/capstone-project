@@ -22,6 +22,15 @@ export class EditCourseComponent implements OnInit {
     private formBuilder: FormBuilder
   ) {
     this.router = router;
+    this.editCourseForm = formBuilder.group({
+      GroupId: [null, Validators.required],
+      GroupName: [null, Validators.required],
+      OrganizationName: [null, Validators.required],
+      SponsorName: [null, Validators.required],
+      SponsorPhone: [null, Validators.required],
+      SponsorEmail: [null, Validators.required],
+      MaxGroupSize: [null, Validators.required]
+    });
   }
 
   ngOnInit(): void {
@@ -30,40 +39,76 @@ export class EditCourseComponent implements OnInit {
     );
     console.log(this.groupId);
 
-    this.groupService
-      .getGroupById(this.groupId)
-      .subscribe((group) => (this.group = group));
-    console.log(this.group);
-
-    this.editCourseForm = this.formBuilder.group({
-      groupName: [null, Validators.required],
-      organizationName: [null, Validators.required],
-      sponsorName: [null, Validators.required],
-      sponsorPhone: [null, Validators.required],
-      sponsorEmail: [null, Validators.required],
-      maxGroupSize: [null, Validators.required],
-    });
-  }
-
-  editGroup(formValues): void {
-    this.group.GroupId = 0;
-    this.group.GroupName = formValues.groupName;
-    this.group.OrganizationName = formValues.OrganizationName;
-    this.group.SponsorName = formValues.SponsorName;
-    this.group.SponsorPhone = formValues.SponsorPhone;
-    this.group.SponsorEmail = formValues.SponsorEmail;
-    this.group.MaxGroupSize = formValues.MaxGroupSize;
-    this.groupService
-      .editGroup(formValues)
-      .subscribe((group) => (formValues = group));
-  }
-
-  onSubmit(formValues): void {
-    this.editGroup(formValues);
-    this.groupService
-      .getGroupById(this.groupId)
-      .subscribe((group) => (this.selectedGroup = group));
+    this.groupService.getGroupById(this.groupId).subscribe((group) => (this.selectedGroup = group));
     console.log(this.selectedGroup);
+
+
+  }
+
+  mapFormToGroup(): Group {
+    return {
+      GroupId: this.selectedGroup.GroupId,
+      GroupName: this.groupNameInput(),
+      OrganizationName: this.organizationNameInput(),
+      SponsorName: this.sponsorNameInput(),
+      SponsorPhone: this.sponsorPhoneInput(),
+      SponsorEmail: this.sponsorEmailInput(),
+      MaxGroupSize: this.editCourseForm.get('MaxGroupSize').value
+    }
+  }
+
+  groupNameInput(): string {
+    if (this.editCourseForm.get('GroupName').value === null) {
+      return this.selectedGroup.GroupName;
+    } else {
+      return this.editCourseForm.get('GroupName').value;
+    }
+  }
+
+  organizationNameInput(): string {
+    if (this.editCourseForm.get('OrganizationName').value === null) {
+      return this.selectedGroup.OrganizationName;
+    } else {
+      return this.editCourseForm.get('OrganizationName').value;
+    }
+  }
+
+  sponsorNameInput(): string {
+    if (this.editCourseForm.get('SponsorName').value === null) {
+      return this.selectedGroup.SponsorName;
+    } else {
+      return this.editCourseForm.get('SponsorName').value;
+    }
+  }
+
+  sponsorPhoneInput(): string {
+    if (this.editCourseForm.get('SponsorPhone').value === null) {
+      return this.selectedGroup.SponsorPhone;
+    } else {
+      return this.editCourseForm.get('SponsorPhone').value;
+    }
+  }
+
+  sponsorEmailInput(): string {
+    if (this.editCourseForm.get('SponsorEmail').value === null) {
+      return this.selectedGroup.SponsorEmail;
+    } else {
+      return this.editCourseForm.get('SponsorEmail').value;
+    }
+  }
+
+  maxGroupSizeInput(): number {
+    if (this.editCourseForm.get('MaxGroupSize').value === null) {
+      return this.selectedGroup.MaxGroupSize;
+    } else {
+      return this.editCourseForm.get('MaxGroupSize').value;
+    }
+  }
+  
+
+  onSubmit(): void {
+    this.selectedGroup = this.mapFormToGroup();
+    this.groupService.editGroup(this.selectedGroup).subscribe((group) => this.groupService.getGroupById(this.group.GroupId));
 
     const routePath = `courseDetails/${this.selectedGroup.GroupId}`;
     console.log(routePath);

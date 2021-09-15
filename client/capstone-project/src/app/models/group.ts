@@ -1,14 +1,14 @@
 import { Member } from "./member";
 
 export class Group {
-    GroupId: number;
+    GroupId?: number;
     GroupName: string;
     OrganizationName: string;
     SponsorName: string;
     SponsorPhone: string;
     SponsorEmail: string;
     MaxGroupSize: number;
-    Members: Member[];
+    Members?: Member[];
 
 constructor(groupId, groupName, organizaitonName, sponsorName, sponsorPhone, sponsorEmail, maxGroupSize, members) {
         this.GroupId = groupId;

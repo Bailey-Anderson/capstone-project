@@ -1,12 +1,12 @@
 [
   {
     "GroupId": 1,
-    "GroupName": "HIST-110",
+    "GroupName": "HIST-102",
     "OrganizationName": "HIST",
     "SponsorName": "AMERICAN HISTORY 1900-1950",
     "SponsorPhone": "Mr. Tom Forrester",
     "SponsorEmail": "MWF 1:00 p.m. - 2:15 p.m.",
-    "MaxGroupSize": 15,
+    "MaxGroupSize": 10,
     "Members": [
       {
         "MemberId": 2,
