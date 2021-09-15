@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Group } from 'src/app/models/group';
+import { Member } from 'src/app/models/member';
 import { GroupService } from 'src/app/services/group.service';
 
 @Component({
@@ -15,6 +16,7 @@ export class AddStudentComponent implements OnInit {
   addStudentForm: FormGroup;
   groupId: number;
   selectedGroup: Group;
+  member: Member;
 
   constructor(private groupService: GroupService,
     private router: Router,
@@ -41,10 +43,10 @@ export class AddStudentComponent implements OnInit {
   }
 
   addStudent(formValues): void {
-    this.group.Members.MemberId = 0;
-    this.group.Members.MemberName = formValues.memberName;
-    this.group.Members.MemberEmail = formValues.memberEmail;
-    this.group.Members.MemberPhone = formValues.memberPhone;
+    this.member.MemberId = 0;
+    this.member.MemberName = formValues.memberName;
+    this.member.MemberEmail = formValues.memberEmail;
+    this.member.MemberPhone = formValues.memberPhone;
     this.groupService.addMemberToGroup(this.group, this.group.GroupId);
     this.router.navigate(['courseDetails'])
   }

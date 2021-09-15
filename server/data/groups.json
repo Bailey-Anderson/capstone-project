@@ -201,5 +201,15 @@
     "SponsorEmail": "TTH 1:00 p.m. - 2:45 p.m.",
     "MaxGroupSize": 4,
     "Members": []
+  },
+  {
+    "GroupId": 11,
+    "GroupName": "ART-300",
+    "OrganizationName": "Art",
+    "SponsorName": "Painting II",
+    "SponsorPhone": "Mr. Nick Saban",
+    "SponsorEmail": "MWF 11:00 a.m. - 11:50 a.m.",
+    "MaxGroupSize": 3,
+    "Members": []
   }
 ]

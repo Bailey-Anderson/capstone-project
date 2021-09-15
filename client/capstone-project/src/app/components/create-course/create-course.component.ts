@@ -19,12 +19,12 @@ export class CreateCourseComponent implements OnInit {
     private formBuilder: FormBuilder) { 
       this.router = router;
       this.createCourseForm = formBuilder.group({
-        groupName: [null, Validators.required],
-        organizationName: [null, Validators.required],
-        sponsorName: [null, Validators.required],
-        sponsorPhone: [null, Validators.required],
-        sponsorEmail: [null, Validators.required],
-        maxGroupSize: [null, Validators.required]
+        GroupName: [null, Validators.required],
+        OrganizationName: [null, Validators.required],
+        SponsorName: [null, Validators.required],
+        SponsorPhone: [null, Validators.required],
+        SponsorEmail: [null, Validators.required],
+        MaxGroupSize: [null, Validators.required]
       });
     }
 
@@ -32,20 +32,11 @@ export class CreateCourseComponent implements OnInit {
     this.groupService.getGroups().subscribe(groups => this.group = groups);
   }
 
-  addGroup(formValues): void {
-    this.group.GroupId = 0;
-    this.group.GroupName = formValues.GroupName;
-    this.group.OrganizationName = formValues.OrganizationName;
-    this.group.SponsorName = formValues.SponsorName;
-    this.group.SponsorPhone = formValues.SponsorPhone;
-    this.group.SponsorEmail = formValues.SponsorEmail;
-    this.group.MaxGroupSize = formValues.MaxGroupSize;
-    this.groupService.addGroup(this.group).subscribe();
-    this.router.navigate(['courseList'])
-  }
-
   onSubmit(formValues): void {
-    this.addGroup(formValues);
+    this.groupService.addGroup(formValues).subscribe((group) => this.groupService.getGroups());
+    console.log(formValues);
+    console.log('onSubmit called');
+    this.router.navigate(['courseList']);
   }
 
   cancel() {

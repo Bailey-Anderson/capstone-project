@@ -7,6 +7,7 @@ body > div {
     width: 100%;
     margin: 10px;
     font-family: 'Hind', sans-serif;
+    height: 600px;
 }
 
 h1 {
@@ -30,6 +31,13 @@ i {
 
 h2 {
     color: #274690;
+    margin: 30px;
+}
+
+span {
+    color: black;
+    font-size: large;
+    font-weight: 300;
 }
 
 button {

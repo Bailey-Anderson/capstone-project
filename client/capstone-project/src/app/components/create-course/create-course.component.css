@@ -1,0 +1,21 @@
+form {
+    display: flex;
+    align-content: center;
+}
+
+div {
+    align-items: center;
+}
+
+.ui-g-4 {
+    width: 10%;
+}
+
+.ui-g-8 {
+    width: 20%;
+}
+
+label {
+    font-size: large;
+    font-family: 'Hind', 'Taviraj', sans-serif;
+}

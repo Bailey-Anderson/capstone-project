@@ -1,6 +1,7 @@
 import { Component, OnChanges, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Group } from 'src/app/models/group';
+import { Member } from 'src/app/models/member';
 import { GroupService } from 'src/app/services/group.service';
 
 @Component({
@@ -12,6 +13,8 @@ export class CourseDetailsComponent implements OnInit {
 
   group: Group;
   groups: Group[];
+  member: Member;
+  members: Member[];
   groupId: number;
   selectedGroup: Group;
 
@@ -35,7 +38,10 @@ export class CourseDetailsComponent implements OnInit {
 
   deleteCourse(group: Group) {
     this.groupService.deleteGroupById(this.groupId).subscribe((groups) => group = groups);
-    confirm(`Are you sure you want to delete ${group.SponsorName}? This action cannot be undone`)
+    confirm(`Are you sure you want to delete ${group.SponsorName}? This action cannot be undone`).valueOf();
+    if (confirm().valueOf() === true) {
+      this.router.navigate(['courseList']);
+    }
   }
 
   returnToCourses() {

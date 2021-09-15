@@ -45,15 +45,14 @@ export class EditCourseComponent implements OnInit {
     });
   }
 
-  editGroup(formValues: Group): void {
+  editGroup(formValues): void {
     this.group.GroupId = 0;
-    this.group.GroupName = formValues.GroupName;
+    this.group.GroupName = formValues.groupName;
     this.group.OrganizationName = formValues.OrganizationName;
     this.group.SponsorName = formValues.SponsorName;
     this.group.SponsorPhone = formValues.SponsorPhone;
     this.group.SponsorEmail = formValues.SponsorEmail;
     this.group.MaxGroupSize = formValues.MaxGroupSize;
-    this.group.Members
     this.groupService
       .editGroup(formValues)
       .subscribe((group) => (formValues = group));
