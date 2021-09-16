@@ -29,10 +29,7 @@ to set the port number.
 
 These are the specific endpoints used within my project:
 
-GET, EDIT, AND ADD GROUPS: /api/groups
-GET GROUP BY ID AND DELETE A GROUP: /api/groups/:id
-DELETE MEMBER IN GROUP: /api/groups/:groupid/members/:memberid
-ADD MEMBER TO GROUP: /api/groups/:groupid/members
+GET, EDIT, AND ADD GROUPS: /api/groups, GET GROUP BY ID AND DELETE A GROUP: /api/groups/:id, DELETE MEMBER IN GROUP: /api/groups/:groupid/members/:memberid, ADD MEMBER TO GROUP: /api/groups/:groupid/members
 
 ## Build
 
