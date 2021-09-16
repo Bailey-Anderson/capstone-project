@@ -25,6 +25,24 @@
         "MemberEmail": "susa2007@gmail.com",
         "MemberName": "Siddalee Grace",
         "MemberPhone": "555-000-0020"
+      },
+      {
+        "MemberId": 14,
+        "MemberEmail": "as@aol.com",
+        "MemberName": "Amber Schultz",
+        "MemberPhone": "281-883-1923"
+      },
+      {
+        "MemberId": 15,
+        "MemberEmail": "natethomp@yahoo.com",
+        "MemberName": "Nathan Thompson",
+        "MemberPhone": "489-094-3920"
+      },
+      {
+        "MemberId": 16,
+        "MemberEmail": "jkennedy@gmail.com",
+        "MemberName": "Joseph Kennedy",
+        "MemberPhone": "993-657-0012"
       }
     ]
   },
@@ -48,6 +66,18 @@
         "MemberEmail": "thebro@gmail.com",
         "MemberName": "Zephaniah Hughes",
         "MemberPhone": "555-000-0006"
+      },
+      {
+        "MemberId": 17,
+        "MemberEmail": "dadams@hotmail.com",
+        "MemberName": "Derrick Adams",
+        "MemberPhone": "574-023-8833"
+      },
+      {
+        "MemberId": 18,
+        "MemberEmail": "kate8@gmail.com",
+        "MemberName": "Kate Dreiling",
+        "MemberPhone": "417-999-1200"
       }
     ]
   },
@@ -135,6 +165,18 @@
         "MemberEmail": "darman@yahoo.com",
         "MemberName": "Darryl Johnson",
         "MemberPhone": "293-029-0293"
+      },
+      {
+        "MemberId": 1,
+        "MemberEmail": "pursy1222@gmail.com",
+        "MemberName": "Pursalane Faye",
+        "MemberPhone": "555-000-0005"
+      },
+      {
+        "MemberId": 5,
+        "MemberEmail": "thebro@gmail.com",
+        "MemberName": "Zephaniah Hughes",
+        "MemberPhone": "555-000-0006"
       }
     ]
   },
@@ -152,6 +194,18 @@
         "MemberEmail": "heythatsjess@gmail.com",
         "MemberName": "Jessica Thompson",
         "MemberPhone": "390-024-7584"
+      },
+      {
+        "MemberId": 1,
+        "MemberEmail": "pursy1222@gmail.com",
+        "MemberName": "Pursalane Faye",
+        "MemberPhone": "555-000-0005"
+      },
+      {
+        "MemberId": 5,
+        "MemberEmail": "thebro@gmail.com",
+        "MemberName": "Zephaniah Hughes",
+        "MemberPhone": "555-000-0006"
       }
     ]
   },
@@ -163,7 +217,38 @@
     "SponsorPhone": "Mrs. Abigail Fern",
     "SponsorEmail": "MWF 9:00 a.m. - 10:15 a.m.",
     "MaxGroupSize": 10,
-    "Members": []
+    "Members": [
+      {
+        "MemberId": 14,
+        "MemberEmail": "as@aol.com",
+        "MemberName": "Amber Schultz",
+        "MemberPhone": "281-883-1923"
+      },
+      {
+        "MemberId": 15,
+        "MemberEmail": "natethomp@yahoo.com",
+        "MemberName": "Nathan Thompson",
+        "MemberPhone": "489-094-3920"
+      },
+      {
+        "MemberId": 16,
+        "MemberEmail": "jkennedy@gmail.com",
+        "MemberName": "Joseph Kennedy",
+        "MemberPhone": "993-657-0012"
+      },
+      {
+        "MemberId": 1,
+        "MemberEmail": "pursy1222@gmail.com",
+        "MemberName": "Pursalane Faye",
+        "MemberPhone": "555-000-0005"
+      },
+      {
+        "MemberId": 5,
+        "MemberEmail": "thebro@gmail.com",
+        "MemberName": "Zephaniah Hughes",
+        "MemberPhone": "555-000-0006"
+      }
+    ]
   },
   {
     "GroupId": 8,
@@ -179,6 +264,24 @@
         "MemberEmail": "itsjamalyall@aol.com",
         "MemberName": "Jamal Yall",
         "MemberPhone": "903-238-9432"
+      },
+      {
+        "MemberId": 7,
+        "MemberEmail": "rdj@test.com",
+        "MemberName": "Robert Downy Jr",
+        "MemberPhone": "0000000000"
+      },
+      {
+        "MemberId": 2,
+        "MemberEmail": "theaterkid0625@gmail.com",
+        "MemberName": "Ezra Aiden",
+        "MemberPhone": "555-000-0002"
+      },
+      {
+        "MemberId": 4,
+        "MemberEmail": "aslan_the_great@gmail.com",
+        "MemberName": "Elisha Aslan",
+        "MemberPhone": "555-000-0003"
       }
     ]
   },
@@ -190,7 +293,38 @@
     "SponsorPhone": "Mrs. Cindy Carter",
     "SponsorEmail": "TTH 12:00 p.m. - 1:45 p.m.",
     "MaxGroupSize": 8,
-    "Members": []
+    "Members": [
+      {
+        "MemberId": 7,
+        "MemberEmail": "rdj@test.com",
+        "MemberName": "Robert Downy Jr",
+        "MemberPhone": "0000000000"
+      },
+      {
+        "MemberId": 2,
+        "MemberEmail": "theaterkid0625@gmail.com",
+        "MemberName": "Ezra Aiden",
+        "MemberPhone": "555-000-0002"
+      },
+      {
+        "MemberId": 4,
+        "MemberEmail": "aslan_the_great@gmail.com",
+        "MemberName": "Elisha Aslan",
+        "MemberPhone": "555-000-0003"
+      },
+      {
+        "MemberId": 1,
+        "MemberEmail": "pursy1222@gmail.com",
+        "MemberName": "Pursalane Faye",
+        "MemberPhone": "555-000-0005"
+      },
+      {
+        "MemberId": 5,
+        "MemberEmail": "thebro@gmail.com",
+        "MemberName": "Zephaniah Hughes",
+        "MemberPhone": "555-000-0006"
+      }
+    ]
   },
   {
     "GroupId": 10,
@@ -200,7 +334,26 @@
     "SponsorPhone": "Ms. Winona Ryder",
     "SponsorEmail": "TTH 1:00 p.m. - 2:45 p.m.",
     "MaxGroupSize": 4,
-    "Members": []
+    "Members": [
+      {
+        "MemberId": 14,
+        "MemberEmail": "as@aol.com",
+        "MemberName": "Amber Schultz",
+        "MemberPhone": "281-883-1923"
+      },
+      {
+        "MemberId": 15,
+        "MemberEmail": "natethomp@yahoo.com",
+        "MemberName": "Nathan Thompson",
+        "MemberPhone": "489-094-3920"
+      },
+      {
+        "MemberId": 16,
+        "MemberEmail": "jkennedy@gmail.com",
+        "MemberName": "Joseph Kennedy",
+        "MemberPhone": "993-657-0012"
+      }
+    ]
   },
   {
     "GroupId": 11,
@@ -216,6 +369,18 @@
         "MemberEmail": "mk@gmail.com",
         "MemberName": "Mary Kate",
         "MemberPhone": "380-029-8003"
+      },
+      {
+        "MemberId": 16,
+        "MemberEmail": "jkennedy@gmail.com",
+        "MemberName": "Joseph Kennedy",
+        "MemberPhone": "993-657-0012"
+      },
+      {
+        "MemberId": 5,
+        "MemberEmail": "thebro@gmail.com",
+        "MemberName": "Zephaniah Hughes",
+        "MemberPhone": "555-000-0006"
       }
     ]
   }
