@@ -31,7 +31,7 @@
         ></i>
       </button>
     </header>
-    <p-table [value]="groups">
+    <p-table [value]="members">
       <ng-template pTemplate="header" let-columns>
         <tr>
           <th>Student Name</th>
@@ -40,11 +40,11 @@
           <th>Remove</th>
         </tr>
       </ng-template>
-      <ng-template pTemplate="body" let-member>
+      <ng-template pTemplate="body" let-members>
         <tr>
-          <td>{{ member?.MemberName }}</td>
-          <td>{{ member?.MemberEmail }}</td>
-          <td>{{ member?.MemberPhone }}</td>
+          <td>{{ members?.MemberName }}</td>
+          <td>{{ members?.MemberEmail }}</td>
+          <td>{{ members?.MemberPhone }}</td>
           <td><button pButton type="button" class="remove-button">
             <i
               class="pi pi-minus-circle remove-icon"

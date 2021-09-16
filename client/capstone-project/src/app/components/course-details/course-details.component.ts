@@ -12,7 +12,6 @@ import { GroupService } from 'src/app/services/group.service';
 export class CourseDetailsComponent implements OnInit {
 
   group: Group;
-  groups: Group[];
   member: Member;
   members: Member[];
   groupId: number;
@@ -29,6 +28,8 @@ export class CourseDetailsComponent implements OnInit {
 
     this.groupService.getGroupById(this.groupId).subscribe((group) => this.group = group);
     console.log(this.group);
+
+    this.members = this.group.Members;
 
   }
 

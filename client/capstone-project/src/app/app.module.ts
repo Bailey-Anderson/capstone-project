@@ -15,9 +15,9 @@ import { CourseDetailsComponent } from './components/course-details/course-detai
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './components/footer/footer.component'; 
 import { GroupService } from './services/group.service';
-import { CreateCourseComponent } from './components/create-course/create-course.component';
-import { EditCourseComponent } from './components/edit-course/edit-course.component';
-import { AddStudentComponent } from './components/add-student/add-student.component';
+import { CreateCourseComponent } from './components/course-list/create-course/create-course.component';
+import { EditCourseComponent } from './components/course-details/edit-course/edit-course.component';
+import { AddStudentComponent } from './components/course-details/add-student/add-student.component';
 @NgModule({
   declarations: [
     AppComponent,

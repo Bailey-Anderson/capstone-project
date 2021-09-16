@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, Route } from '@angular/router';
-import { AddStudentComponent } from './components/add-student/add-student.component';
+import { AddStudentComponent } from './components/course-details/add-student/add-student.component';
 import { CourseDetailsComponent } from './components/course-details/course-details.component';
 import { CourseListComponent } from './components/course-list/course-list.component';
-import { CreateCourseComponent } from './components/create-course/create-course.component';
-import { EditCourseComponent } from './components/edit-course/edit-course.component';
+import { CreateCourseComponent } from './components/course-list/create-course/create-course.component';
+import { EditCourseComponent } from './components/course-details/edit-course/edit-course.component';
 
 const fallbackRoute: Route = {
   path: '**',
