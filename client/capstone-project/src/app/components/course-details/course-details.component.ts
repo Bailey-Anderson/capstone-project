@@ -59,11 +59,10 @@ export class CourseDetailsComponent implements OnInit, AfterContentChecked {
       this.groupService.getGroupById(this.group.GroupId).subscribe((group) => this.group = group);
 
       this.router.navigateByUrl(`courseDetails/${this.group.GroupId}`);
+      window.location.reload();
     } else {
       this.router.navigateByUrl(`courseDetails/${this.group.GroupId}`);
     }
-
-    this.groupService.getGroups().subscribe((group) => this.group = group);
   }
 
   editCourseDetails(): void {
