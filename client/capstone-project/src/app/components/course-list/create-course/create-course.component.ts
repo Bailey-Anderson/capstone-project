@@ -44,6 +44,7 @@ export class CreateCourseComponent implements OnInit {
     
     if (this.createCourseForm.valid) {
       this.router.navigate(['courseList']);
+      this.groupService.getGroups().subscribe(groups => this.group = groups);
     }
   }
 

@@ -252,6 +252,47 @@
   },
   {
     "GroupId": 8,
+    "GroupName": "MUSIC-117",
+    "OrganizationName": "MUSIC",
+    "SponsorName": "CHOIR",
+    "SponsorPhone": "Mrs. Abigail Fern",
+    "SponsorEmail": "MWF 11:00 a.m. - 11:50 a.m.",
+    "MaxGroupSize": 7,
+    "Members": [
+      {
+        "MemberId": 14,
+        "MemberEmail": "as@aol.com",
+        "MemberName": "Amber Schultz",
+        "MemberPhone": "281-883-1923"
+      },
+      {
+        "MemberId": 15,
+        "MemberEmail": "natethomp@yahoo.com",
+        "MemberName": "Nathan Thompson",
+        "MemberPhone": "489-094-3920"
+      },
+      {
+        "MemberId": 16,
+        "MemberEmail": "jkennedy@gmail.com",
+        "MemberName": "Joseph Kennedy",
+        "MemberPhone": "993-657-0012"
+      },
+      {
+        "MemberId": 1,
+        "MemberEmail": "pursy1222@gmail.com",
+        "MemberName": "Pursalane Faye",
+        "MemberPhone": "555-000-0005"
+      },
+      {
+        "MemberId": 5,
+        "MemberEmail": "thebro@gmail.com",
+        "MemberName": "Zephaniah Hughes",
+        "MemberPhone": "555-000-0006"
+      }
+    ]
+  },
+  {
+    "GroupId": 9,
     "GroupName": "ENG-101",
     "OrganizationName": "ENG",
     "SponsorName": "ENGLISH COMPOSITION",
@@ -286,7 +327,7 @@
     ]
   },
   {
-    "GroupId": 9,
+    "GroupId": 10,
     "GroupName": "ENG-202",
     "OrganizationName": "ENG",
     "SponsorName": "POETRY ANALYSIS",
@@ -327,7 +368,7 @@
     ]
   },
   {
-    "GroupId": 10,
+    "GroupId": 11,
     "GroupName": "ART-118",
     "OrganizationName": "ART",
     "SponsorName": "POTTERY",
@@ -356,7 +397,7 @@
     ]
   },
   {
-    "GroupId": 11,
+    "GroupId": 12,
     "GroupName": "ART-300",
     "OrganizationName": "ART",
     "SponsorName": "PAINTING II",

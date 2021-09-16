@@ -53,7 +53,7 @@ export class EditCourseComponent implements OnInit {
       SponsorName: this.sponsorNameInput(),
       SponsorPhone: this.sponsorPhoneInput(),
       SponsorEmail: this.sponsorEmailInput(),
-      MaxGroupSize: this.editCourseForm.get('MaxGroupSize').value
+      MaxGroupSize: this.maxGroupSizeInput()
     }
   }
 
@@ -115,10 +115,10 @@ export class EditCourseComponent implements OnInit {
       (error) => {
         alert(`Invalid data entered. Please ensure the entire form is filled out and try again`);
       });
-      
-      const routePath = `courseDetails/${this.selectedGroup.GroupId}`;
-      console.log(routePath);
-      this.router.navigateByUrl(`${routePath}`);
+
+    const routePath = `courseDetails/${this.selectedGroup.GroupId}`;
+    console.log(routePath);
+    this.router.navigateByUrl(`${routePath}`);
   }
 
   cancel() {
