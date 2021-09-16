@@ -108,11 +108,17 @@ export class EditCourseComponent implements OnInit {
 
   onSubmit(): void {
     this.selectedGroup = this.mapFormToGroup();
-    this.groupService.editGroup(this.selectedGroup).subscribe((group) => this.groupService.getGroupById(this.group.GroupId));
-
-    const routePath = `courseDetails/${this.selectedGroup.GroupId}`;
-    console.log(routePath);
-    this.router.navigateByUrl(`${routePath}`);
+    this.groupService.editGroup(this.selectedGroup).subscribe(
+      (group) => { 
+        this.groupService.getGroupById(this.group.GroupId);
+      },
+      (error) => {
+        alert(`Invalid data entered. Please ensure the entire form is filled out and try again`);
+      });
+      
+      const routePath = `courseDetails/${this.selectedGroup.GroupId}`;
+      console.log(routePath);
+      this.router.navigateByUrl(`${routePath}`);
   }
 
   cancel() {

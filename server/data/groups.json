@@ -43,6 +43,12 @@
         "MemberEmail": "jkennedy@gmail.com",
         "MemberName": "Joseph Kennedy",
         "MemberPhone": "993-657-0012"
+      },
+      {
+        "MemberId": 19,
+        "MemberEmail": "JD@outlook.com",
+        "MemberName": "Jimmy Dean",
+        "MemberPhone": "981-129-0005"
       }
     ]
   },
@@ -358,7 +364,7 @@
   {
     "GroupId": 11,
     "GroupName": "ART-300",
-    "OrganizationName": "Art",
+    "OrganizationName": "ART",
     "SponsorName": "PAINTING II",
     "SponsorPhone": "Mr. Nick Saban",
     "SponsorEmail": "MWF 11:00 a.m. - 11:50 a.m.",

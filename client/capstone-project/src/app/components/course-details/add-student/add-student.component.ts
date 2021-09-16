@@ -46,10 +46,18 @@ export class AddStudentComponent implements OnInit {
 
 
   onSubmit(formValues: Member): void {
-    this.groupService.addMemberToGroup(formValues, this.group.GroupId).subscribe((group) => this.groupService.getGroupById(this.group.GroupId));
+    this.groupService.addMemberToGroup(formValues, this.group.GroupId).subscribe(
+      (group) => {
+        this.groupService.getGroupById(this.group.GroupId);
+      },
+      (error) => {
+        alert(`Invalid data entered. Please ensure the entire form is filled out and try again`);
+      });
     console.log(formValues);
-
-    this.router.navigateByUrl(`courseDetails/${this.group.GroupId}`);
+    
+    if (this.addStudentForm.valid) {
+      this.router.navigateByUrl(`courseDetails/${this.group.GroupId}`);
+    }
   }
 
   cancel() {

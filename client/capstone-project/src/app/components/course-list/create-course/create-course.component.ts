@@ -33,9 +33,18 @@ export class CreateCourseComponent implements OnInit {
   }
 
   onSubmit(formValues): void {
-    this.groupService.addGroup(formValues).subscribe((group) => this.groupService.getGroups());
+    this.groupService.addGroup(formValues).subscribe(
+      (group) => {
+        this.groupService.getGroups();
+      },
+      (error) => {
+        alert(`Invalid data entered. Please ensure the entire form is filled out and try again`);
+      });
     console.log(formValues);
-    this.router.navigate(['courseList']);
+    
+    if (this.createCourseForm.valid) {
+      this.router.navigate(['courseList']);
+    }
   }
 
   cancel() {
