@@ -38,8 +38,8 @@ export class CourseDetailsComponent implements OnInit {
   // }
 
   deleteCourse(group: Group) {
-    this.groupService.deleteGroupById(this.groupId).subscribe((groups) => group = groups);
     if (confirm(`Are you sure you want to delete ${group.SponsorName}? This action cannot be undone`).valueOf() === true) {
+      this.groupService.deleteGroupById(this.groupId).subscribe((groups) => group = groups);
       this.router.navigate(['courseList']);
     } else {
       this.router.navigateByUrl(`editCourse/${this.selectedGroup.GroupId}`);

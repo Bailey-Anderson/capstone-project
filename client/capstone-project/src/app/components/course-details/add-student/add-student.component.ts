@@ -16,7 +16,7 @@ export class AddStudentComponent implements OnInit {
   addStudentForm: FormGroup;
   groupId: number;
   selectedGroup: Group;
-  member: Member;
+  members: Member[];
 
   constructor(private groupService: GroupService,
     private router: Router,
@@ -24,9 +24,9 @@ export class AddStudentComponent implements OnInit {
     private formBuilder: FormBuilder) { 
       this.router = router;
       this.addStudentForm = formBuilder.group({
-        memberName: [null, Validators.required],
-        memberEmail: [null, Validators.required],
-        memberPhone: [null, Validators.required]
+        MemberName: [null, Validators.required],
+        MemberEmail: [null, Validators.required],
+        MemberPhone: [null, Validators.required]
       });
     }
 
@@ -40,19 +40,16 @@ export class AddStudentComponent implements OnInit {
       .getGroupById(this.groupId)
       .subscribe((group) => (this.group = group));
     console.log(this.group);
+
+    this.group.Members = this.members;
   }
 
-  addStudent(formValues): void {
-    this.member.MemberId = 0;
-    this.member.MemberName = formValues.memberName;
-    this.member.MemberEmail = formValues.memberEmail;
-    this.member.MemberPhone = formValues.memberPhone;
-    this.groupService.addMemberToGroup(this.group, this.group.GroupId);
-    this.router.navigate(['courseDetails'])
-  }
 
-  onSubmit(formValues): void {
-    this.addStudent(formValues);
+  onSubmit(formValues: Member): void {
+    this.groupService.addMemberToGroup(formValues, this.group.GroupId).subscribe((group) => this.groupService.getGroupById(this.group.GroupId));
+    console.log(formValues);
+
+    this.router.navigateByUrl(`courseDetails/${this.group.GroupId}`);
   }
 
   cancel() {

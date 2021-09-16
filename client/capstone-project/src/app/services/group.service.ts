@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Group } from '../models/group';
+import { Member } from '../models/member';
 
 @Injectable({
   providedIn: 'root'
@@ -45,8 +46,8 @@ export class GroupService {
     return results;
   }
 
-  addMemberToGroup(group: Group, groupId: number): Observable<Group> {
-    const results: Observable<Group> = this.http.post<Group>(`${this.groupUrl}/${groupId}/members`, group, this.jsonContentTypeHeaders);
+  addMemberToGroup(member: Member, groupId: number): Observable<Group> {
+    const results: Observable<Group> = this.http.post<Group>(`${this.groupUrl}/${groupId}/members`, member, this.jsonContentTypeHeaders);
     return results;
   }
 
