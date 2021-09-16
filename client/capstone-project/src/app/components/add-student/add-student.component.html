@@ -1,5 +1,6 @@
+<h2>Add Student</h2>
 <form [formGroup]="addStudentForm" (ngSubmit)="onSubmit(addStudentForm.value)">
-  <div class="ui-g ui-fluid" *ngIf="member">
+  <div class="ui-g ui-fluid" *ngIf="group">
     <div class="ui-g-12">
       <div class="ui-g-4">
         <label for="group.Members.memberName">Student Name</label>

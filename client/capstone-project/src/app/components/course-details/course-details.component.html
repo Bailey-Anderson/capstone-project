@@ -1,10 +1,10 @@
-<header>
+<header class="bigger-header-font">
   <h1>{{ group?.SponsorName }}</h1>
 </header>
 <body>
   <div>
     <header>
-      <h1>Course Details</h1>
+      <h2>Course Details</h2>
       <button pButton type="button" class="icon-buttons">
         <i
           class="pi pi-pencil"
@@ -13,16 +13,16 @@
         ></i>
       </button>
     </header>
-    <h2>Department Name: <span>{{ group?.OrganizationName }}</span></h2>
-    <h2>Course Code: <span>{{ group?.GroupName }}</span></h2>
-    <h2>Course Name: <span>{{ group?.SponsorName }}</span></h2>
-    <h2>Instructor Name: <span>{{ group?.SponsorPhone }}</span></h2>
-    <h2>Meeting Time: <span>{{ group?.SponsorEmail }}</span></h2>
-    <h2>Total Seats: <span>{{ group?.MaxGroupSize }}</span></h2>
+    <h3>Department Name: <span>{{ group?.OrganizationName }}</span></h3>
+    <h3>Course Code: <span>{{ group?.GroupName }}</span></h3>
+    <h3>Course Name: <span>{{ group?.SponsorName }}</span></h3>
+    <h3>Instructor Name: <span>{{ group?.SponsorPhone }}</span></h3>
+    <h3>Meeting Time: <span>{{ group?.SponsorEmail }}</span></h3>
+    <h3>Total Seats: <span>{{ group?.MaxGroupSize }}</span></h3>
   </div>
   <div>
     <header>
-      <h1>Students Enrolled</h1>
+      <h2>Students Enrolled</h2>
       <button pButton type="button" class="icon-buttons">
         <i
           class="pi pi-user-plus"

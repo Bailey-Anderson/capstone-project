@@ -1,0 +1,44 @@
+form {
+    display: flex;
+    margin-top: 50px;
+}
+
+h2 {
+    color: #274690;
+    margin: 30px;
+    margin-left: 44% !important;
+    font-family: 'Hind', 'Taviraj', sans-serif;
+}
+
+.ui-g-4 {
+    width: 20%;
+}
+
+.ui-g-8 {
+    width: 20%;
+}
+
+.ui-g-12 {
+    margin-left: 39%;
+    margin-bottom: 20px;
+}
+
+.ui-dialog-buttonpane {
+    margin-left: 44%;
+}
+
+label {
+    font-size: large;
+    font-family: 'Hind', 'Taviraj', sans-serif;
+}
+
+:host::ng-deep .ui-button {
+    margin: 10px;
+    margin-top: 30px;
+    height: 40px;
+    width: 90px;
+    background-color: #1A936F;
+    color: white;
+    border: 1px solid #1A936F;
+    border-radius: 3px;
+}

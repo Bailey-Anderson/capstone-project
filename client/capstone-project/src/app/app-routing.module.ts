@@ -21,7 +21,7 @@ const routes: Routes = [
       { path: 'createCourse', component: CreateCourseComponent },
       { path: 'editCourse', component: EditCourseComponent},
       { path: 'editCourse/:groupId', component: EditCourseComponent},
-      { path: 'addStudent', component: AddStudentComponent},
+      { path: 'courseDetails/:groupId/addStudent', component: AddStudentComponent},
       fallbackRoute
     ]
   }

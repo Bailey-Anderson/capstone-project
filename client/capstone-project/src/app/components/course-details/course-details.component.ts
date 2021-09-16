@@ -62,6 +62,11 @@ export class CourseDetailsComponent implements OnInit {
   }
 
   addStudent(): void {
-    this.router.navigate(['addStudent']);
+    this.groupService.getGroupById(this.groupId).subscribe((group) => this.selectedGroup = group);
+    console.log(this.selectedGroup);
+    
+    const routePath = `courseDetails/${this.selectedGroup.GroupId}`;
+    console.log(routePath);
+    this.router.navigateByUrl(`${routePath}/addStudent`);
   }
 }
