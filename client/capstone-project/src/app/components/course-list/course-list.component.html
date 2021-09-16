@@ -1,12 +1,6 @@
-<div class="ui-g ui-fluid">
-  <div class="ui-g-12 ui-md-4">
-    <div class="ui-inputgroup">
-      <input type="text" pInputText placeholder="Course" />
-      <button pButton type="button" label="Search"></button>
-    </div>
-  </div>
-</div>
 <p-table
+  #dt
+  [globalFilterFields]="['GroupName', 'SponsorName', 'SponsorPhone']"
   [columns]="cols"
   [value]="group"
   selectionMode="single"
@@ -15,7 +9,20 @@
   [paginator]="true"
   [rows]="15"
 >
-  <ng-template pTemplate="caption"> Course List </ng-template>
+  <ng-template pTemplate="caption">
+    <div class="ui-inputgroup">
+      <i class="pi pi-search" style="margin: 4px 4px 0 0"></i>
+      <input
+        type="text"
+        pInputText
+        size="50"
+        placeholder="Search Courses"
+        (input)="dt.filterGlobal($event.target.value, 'contains')"
+        style="width: auto"
+      />
+    </div>
+    Course List
+  </ng-template>
   <ng-template pTemplate="header" let-columns>
     <tr>
       <th>Course Code</th>

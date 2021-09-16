@@ -9,6 +9,12 @@
     color: #ffffff;
     line-height: 30px;
     font-size: x-large;
+    display: flex;
+    flex-direction: row;
+}
+
+:host::ng-deep .ui-inputgroup {
+    width: 45%;
 }
 
 :host::ng-deep .ui-table .ui-table-thead > tr > th {
