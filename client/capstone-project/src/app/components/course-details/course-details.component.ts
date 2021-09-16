@@ -1,4 +1,4 @@
-import { Component, OnChanges, OnInit } from '@angular/core';
+import { AfterContentChecked, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Group } from 'src/app/models/group';
 import { Member } from 'src/app/models/member';
@@ -9,33 +9,31 @@ import { GroupService } from 'src/app/services/group.service';
   templateUrl: './course-details.component.html',
   styleUrls: ['./course-details.component.css']
 })
-export class CourseDetailsComponent implements OnInit {
+export class CourseDetailsComponent implements OnInit, AfterContentChecked {
 
   group: Group;
-  member: Member;
   members: Member[];
   groupId: number;
   selectedGroup: Group;
+  memberId: number;
+  memberName: string;
 
   constructor(private groupService: GroupService,
               private router: Router,
-              private activatedRoute: ActivatedRoute) { }
+              private activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.activatedRoute.url.subscribe(url => this.groupId = Number(url[1].path));
     console.log(this.groupId);
-    // this.groupService.getGroups().subscribe((groups) => (this.group = groups));
 
     this.groupService.getGroupById(this.groupId).subscribe((group) => this.group = group);
     console.log(this.group);
 
-    this.members = this.group.Members;
-
   }
 
-  // ngOnChanges(): void {
-
-  // }
+  ngAfterContentChecked(): void {
+    this.members = this.group.Members;
+  }
 
   deleteCourse(group: Group) {
     if (confirm(`Are you sure you want to delete ${group.SponsorName}? This action cannot be undone`).valueOf() === true) {
@@ -50,25 +48,30 @@ export class CourseDetailsComponent implements OnInit {
     this.router.navigate(['courseList']);
   }
 
-  removeStudent(memberId) {
+  removeStudent() {
+    for (let i = 0; i < this.members.length; i++) {
+      this.memberId = this.members[i].MemberId;
+      this.memberName = this.members[i].MemberName;
+    }
 
+    if (confirm(`Are you sure you want to remove ${this.memberName} from this course? This action cannot be undone`).valueOf() === true) {
+      this.groupService.deleteMemberFromGroupById(this.group.GroupId, this.memberId).subscribe((group) => this.group = group);
+      this.groupService.getGroupById(this.group.GroupId).subscribe((group) => this.group = group);
+
+      this.router.navigateByUrl(`courseDetails/${this.group.GroupId}`);
+    } else {
+      this.router.navigateByUrl(`courseDetails/${this.group.GroupId}`);
+    }
+
+    this.groupService.getGroups().subscribe((group) => this.group = group);
   }
 
   editCourseDetails(): void {
-    this.groupService.getGroupById(this.groupId).subscribe((group) => this.selectedGroup = group);
-    console.log(this.selectedGroup);
-    
-    const routePath = `editCourse/${this.selectedGroup.GroupId}`;
-    console.log(routePath);
-    this.router.navigateByUrl(`${routePath}`);
+    this.router.navigateByUrl(`editCourse/${this.group.GroupId}`);
   }
 
   addStudent(): void {
-    this.groupService.getGroupById(this.groupId).subscribe((group) => this.selectedGroup = group);
-    console.log(this.selectedGroup);
-    
-    const routePath = `courseDetails/${this.selectedGroup.GroupId}`;
-    console.log(routePath);
+    const routePath = `courseDetails/${this.group.GroupId}`;
     this.router.navigateByUrl(`${routePath}/addStudent`);
   }
 }

@@ -66,11 +66,16 @@ button {
     background-color: red;
     color: white;
     border-radius: 100%;
+    margin-left: -10px;
 }
 
 .width12 {
     width: 12%;
     text-align: center;
+}
+
+.width18 {
+    width: 18%;
 }
 
 .pad-left8 {
@@ -95,4 +100,13 @@ p-footer {
     display: flex;
     flex-direction: row;
     justify-content: right;
+}
+
+:host::ng-deep .ui-table .ui-table-tbody > tr {
+    text-align: center;
+}
+
+:host::ng-deep .ui-table {
+    font-family: 'Hind', sans-serif;
+    margin-top: 10px;
 }
