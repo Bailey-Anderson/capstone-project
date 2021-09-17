@@ -13,10 +13,6 @@
     flex-direction: row;
 }
 
-:host::ng-deep .ui-table table {
-    height: 600px;
-}
-
 :host::ng-deep .ui-inputgroup {
     width: 45%;
 }
